@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:8080/xml/ http://localhost:8080/xml/customer.xsd">
+    <name>Jane Doe</name>
+    <phone-number>
+        <number>12345</number>
+    </phone-number>
+    <phone-number>
+        <number>222</number>
+    </phone-number>
+</customer>

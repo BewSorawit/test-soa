@@ -1,0 +1,29 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<servlet>
+		<servlet-name>Hello-Servlet</servlet-name>
+		<servlet-class>th.ac.ku.kps.eng.cpe.controller.HelloFirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Hello-Servlet</servlet-name>
+		<url-pattern>/helloworld</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Customer-Servlet</servlet-name>
+		<servlet-class>th.ac.ku.kps.eng.cpe.controller.CustomerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Customer-Servlet</servlet-name>
+		<url-pattern>/customers</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CustomerName-Servlet</servlet-name>
+		<servlet-class>th.ac.ku.kps.eng.cpe.controller.CustomerNameServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CustomerName-Servlet</servlet-name>
+		<url-pattern>/customers/*</url-pattern>
+	</servlet-mapping>
+</web-app>

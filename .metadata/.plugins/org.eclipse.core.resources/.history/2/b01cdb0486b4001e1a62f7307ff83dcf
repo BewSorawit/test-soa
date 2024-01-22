@@ -1,0 +1,37 @@
+package prob1;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+public class ObjToXml {
+	 public static void main(String[] args) {
+	        // Create a sample Customer object
+	        Customer customer = new Customer();
+	        customer.setName("John Doe");
+
+	        List<PhoneNumber> phoneNumbers = new ArrayList<>();
+	        phoneNumbers.add(new PhoneNumber("1234567890"));
+	        phoneNumbers.add(new PhoneNumber("9876543210"));
+	        customer.setPhoneNumbers(phoneNumbers);
+
+	        try {
+	            // Create JAXB context and initialize Marshaller
+	            JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
+	            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+	            // Convert object to XML
+	            StringWriter stringWriter = new StringWriter();
+	            jaxbMarshaller.marshal(customer, stringWriter);
+
+	            // Print the XML representation
+	            String xmlString = stringWriter.toString();
+	            System.out.println(xmlString);
+
+	        } catch (JAXBException e) {
+	            e.printStackTrace();
+	        }
+	    }
+}

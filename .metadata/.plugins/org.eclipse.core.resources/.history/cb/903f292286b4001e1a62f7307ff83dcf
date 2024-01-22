@@ -1,0 +1,49 @@
+package prob1;
+
+import java.io.*;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+
+public class ObjToXml {
+	public static void main(String[] args) {
+		// Create a sample Customer object
+		Customer customer = new Customer();
+		customer.setName("John Doe");
+
+		List<PhoneNumber> phoneNumbers = new ArrayList<>();
+		phoneNumbers.add(new PhoneNumber("1234567890"));
+		phoneNumbers.add(new PhoneNumber("9876543210"));
+		customer.setPhoneNumbers(phoneNumbers);
+
+		try {
+			// Create JAXB context and initialize Marshaller
+			JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
+			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+			// Convert object to XML
+			StringWriter stringWriter = new StringWriter();
+			jaxbMarshaller.marshal(customer, stringWriter);
+
+			// Save the XML content to a file
+			String xmlString = stringWriter.toString();
+			saveToFile(xmlString, "path/to/your/output/file.xml");
+
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void saveToFile(String content, String filePath) {
+		try (FileWriter fileWriter = new FileWriter(new File(filePath))) {
+			fileWriter.write(content);
+			System.out.println("XML content saved to file: " + filePath);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
