@@ -1,7 +1,0 @@
-package order.controller;
-
-import javax.servlet.http.HttpServlet;
-
-public class OrderNameServlet extends HttpServlet {
-
-}

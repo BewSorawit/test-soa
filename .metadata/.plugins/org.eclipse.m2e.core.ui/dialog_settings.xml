@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\User\Desktop\test-soa\Example5"/>
+			<item value="C:\Users\User\Desktop\test-soa\Lab5"/>
 			<item value="C:\Users\User\Desktop\test-soa\Lab2\pom.xml"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -44,6 +46,8 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="Lab5"/>
+			<item value="Example5"/>
 			<item value="example.lab4"/>
 			<item value="servlet"/>
 			<item value="th.ac.ku.kps.eng.cpe.soa.lab3"/>
@@ -51,6 +55,8 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Lab5"/>
+			<item value="Example5"/>
 			<item value="Example4"/>
 			<item value="HelloServlet"/>
 			<item value="Lab3"/>
